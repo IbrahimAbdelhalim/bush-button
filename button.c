@@ -7,41 +7,34 @@
 
 void button_init(button_t* button)
 {
-	if (button == NULL)
-	{
-	__FAIL(BUTTON_ERROR_BUTTON_INSTANCE_EQUAL_NULL_POINTER);
-	}
-	else
-	{
-	if(button->button_init_pin == NULL)
-		{
-	    button->status = BUTTON_STATUS_ERROR;
-		button->error_code == BUTTON_ERROR_BUTTON_INIT_PINSTATE_ROUTINE_EQUAL_NULL_POINTER;
-		}
-    else if (button->button_get_pinstate == NULL)
-		{
-		button->status = BUTTON_STATUS_ERROR;
-		button->error_code == BUTTON_ERROR_BUTTON_GET_PINSTATE_ROUTINE_EQUAL_NULL_POINTER;
-		}
-    else
-		{
-		button->button_init_pin();
+   if (button == NULL)
+    {
+    __FAIL(BUTTON_ERROR_BUTTON_INSTANCE_EQUAL_NULL_POINTER);
+    }
+   else if (button->button_init_pin == NULL)
+    {
+    button->status = BUTTON_STATUS_ERROR;
+    button->error_code == BUTTON_ERROR_BUTTON_INIT_PINSTATE_ROUTINE_EQUAL_NULL_POINTER;
+    }
+   else
+    {
+    button->button_init_pin();
 
-		button->tag = BUTTON_MODULE_TAG;
-		button->state = BUTTON_STATE_RELEASED;
-		button->pressed_time = 0;
-		button->released_time = 0;
+    button->tag = BUTTON_MODULE_TAG;
+    button->state = BUTTON_STATE_RELEASED;
+    button->pressed_time = 0;
+    button->released_time = 0;
 
-		for (uint8_t sample_index = 0; sample_index < BUTTON_MAXIMUM_SAMPLES_NUMBER; ++sample_index)
-			{
-			button->samples[sample_index] = BUTTON_RELEASED_VALUE;
-			}
+    for (uint8_t sample_index = 0; sample_index < BUTTON_MAXIMUM_SAMPLES_NUMBER; ++sample_index)
+        {
+        button->samples[sample_index] = BUTTON_RELEASED_VALUE;
+        }
 
-	     button->status = BUTTON_STATUS_OK;
-		 button->error_code = BUTTON_ERROR_NONE;
-		}
-	}
+    button->status = BUTTON_STATUS_OK;
+    button->error_code = BUTTON_ERROR_NONE;
+    }
 }
+
 
 button_state_t button_get_state(button_t* button)
 {
