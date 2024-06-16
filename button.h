@@ -53,7 +53,7 @@ typedef struct
 	 * Function pointers should be initialized before calling button_init() function
 	*/
 	void (*button_init_pin)(void);
-    uint8_t (*button_get_pinstate)(void); //assumption: when the function is called which this pointer points to, it should return 0 if the button is pressed otherwise it returns 1
+    uint8_t (*button_get_pinstate)(void); //assumption: when the function is called which this pointer points to, it should return 1 if the button is pressed otherwise it returns 0
 	button_status_t status;
 	button_errorcode_t error_code;
 }button_t;
