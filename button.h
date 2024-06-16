@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define __FAIL(__ERROR_CODE__)   (void)(__ERROR_CODE__)            //Implementation of this function is system dependent
+#define __FAIL(__ERROR_CODE__)   (void)(__ERROR_CODE__)            //Implementation of this macro/function is system dependent
 
 
 #define BUTTON_MAXIMUM_PRESSED_TIME_THRESHOLD_IN_MS          5000
