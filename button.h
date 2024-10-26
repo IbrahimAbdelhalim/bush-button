@@ -13,7 +13,7 @@
 #define BUTTON_RELEASED_VALUE                             	0
 
 
-#define BUTTON_TASK_PERIOD_IN_MS                     		5  // assumption: switch bouncing time is equal to 10 ms
+#define BUTTON_TASK_PERIOD_IN_MS                     		10  // assumption: switch bouncing time is equal to 10 ms
 #define BUTTON_TASK_OFFSET_IN_MS                     		0   //design dependent
 
 typedef enum
